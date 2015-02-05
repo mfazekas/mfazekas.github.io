@@ -16,7 +16,7 @@
         if (value == "simple_version") {
           newid = "simple_version";
           oldid = "verbose_version";
-        } else if (value == "verbose_version" ){
+        } else if (value == "verbose_version") {
           newid = "verbose_version";
           oldid = "simple_version";
         } else {
@@ -95,8 +95,7 @@
         font-size: 150%;
         border-bottom: 1px solid black;
         margin-bottom: 10px;
-      } 
-
+      }
       .sub-sub-title {
         font-weight: bold;
       }
@@ -104,36 +103,46 @@
         font-size:120%;
         font-weight: bold;
         margin-top: 15px;
-        width: 90%;
+        width: 100%;
+        /* clearfix */
+        overflow: auto;
+      }
+      .section_subtitle .date-and-title {
+        min-width: 150px;
+        float: right;
       }
       .section_subtitle .jobtitle {
-        width: 200px;
         font-weight: normal;
-        float: right;
         font-size:90%;
       }
       .section_subtitle .date {
-        width: 200px;
-        float: right;
         font-size:90%;
       }
-      
+      .container {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media (min-width: 1000px) { 
+        .container { width: 800px; }
+      }
       .section  {
         margin-bottom: 30px;
       }
       #simple_version .verbose {
         visibility:hidden;
         display: none;
-      } 
-      span.level {
+      }
+      .skills {
+        position: relative;
+      }
+      .skills span.level {
         position:absolute;
         left: 340px;
       }
     </style>
   </head>
 <body onload="changeVerbosity('verbose_version')">
-<div id="verbose_version" class="hresume">
-  
+<div id="verbose_version" class="hresume container">
   <div id="contact" class="contact vcard">
     <div id="name_address">
       <div id="name_address_inner">
@@ -217,8 +226,10 @@
             <div class="workexperience">
                 <div class='section_subtitle'>
                     Freelancer
-                    <div class="date">
-                        2014.04-
+                    <div class="date-and-title">
+                      <div class="date">
+                          2014.04-
+                      </div>
                     </div>
                     <br/>
                 </div>
@@ -229,18 +240,18 @@
                   <ul class="noindent">
                     <li><a href="http://cambeogroup.com/">cambeogroup.com</a> This is an ongoing Rails project of maintaining and improving the company's core product:</li>
                     <ul>
-                      <li>Automated tests: from no tests the project was improved to a reasonable coverage with rspec (~65%), capybara, phantomjs </li>
-                      <li>Refactorings: Rails stack was updated from 3.1 to 4.2, db was migrated from MySql to PostgreSQL, role/security system migrated to pundit, frontend is being migrated to Bootstrap</li>
-                      <li>Performance optimizations: by reducing the query numbers and/or optimizing queries</li>
-                      <li>Deployments: improved capistrano based deployments Amazon EC2</li>
-                      <li>Theming: implemented theming feature with scss and assets pipeline</li>
-                      <li>New features: various new features was implemented on both backend and frontend. Many features involved reporting which was implemented with D3</li>
+                      <li>Automated tests: from no tests the project was improved to a reasonable coverage with rspec (~70%), capybara, phantomjs </li>
+                      <li>Refactorings: Rails stack was updated from 3.1 to 4.2, db was migrated from MySql to PostgreSQL, role/security system migrated to pundit, front-end is being migrated to Bootstrap</li>
+                      <li>Performance optimizations: by fixing N+1 queries, adding bulk import, implemented benchmark and load tests</li>
+                      <li>Deployments: improved capistrano based deployments Amazon EC2, introduced ansible based system configuration</li>
+                      <li>Theming: implemented theming/white label feature with scss and assets pipeline</li>
+                      <li>New features: various new features was implemented on both backend and front-end. Many involved reporting which was implemented using D3</li>
                     </ul>
                     <li><a href="http://nuvi.com/">nuvi.com</a> Internal client retention software, written from scratch, with a team of 3 people</li>
                     <ul>
                       <li>Gmail/calendar integration via google's api</li>
-                      <li>Authorization/multi-tenancy: via pundit</li>
-                      <li>Many backend/frontend features with bootstrap based UI</li>
+                      <li>Authorization/data visibility: via pundit</li>
+                      <li>Many backend/front-end features with bootstrap based UI: live-search, document upload with preview, alert bar</li>
                     </ul>
                     <li>Internal reporting software, with various stats on DNS based advertising revenues, traffic etc. The had huge oracle based db with multimillion rows.</li>
                     <ul>
@@ -257,15 +268,15 @@
       <div class="workexperience">
         <div class='section_subtitle'>
           <a href="http://www.morganstanley.com">Morgan Stanley</a>
-          
-          <div class="date">
-            2008.02-2014.03
+          <div class='date-and-title'>
+            <div class="date">
+              2008.02-2014.03
+            </div>
+            <br/>
+            <div class='jobtitle'>
+              vice president
+            </div>
           </div>
-          <br/>
-          <div class='jobtitle'>
-            vice president
-          </div>
-                                        
         </div>
 
         <div id="body">
@@ -299,8 +310,10 @@
       <div class="workexperience">
         <div class='section_subtitle'>
           <a href="http://www.logmein.com">LogMeIn.com / 3AM Labs</a>
-          <div class="date">
-            2007.01-2008.01
+          <div class='date-and-title'>
+            <div class="date">
+              2007.01-2008.01
+            </div>
           </div>
         </div>
 
@@ -327,13 +340,13 @@
       <div class="workexperience">
         <div class='section_subtitle'>
           <a href="http://www.graphisoft.com">Graphisoft R&amp;D</a> 
-          
-          <div class='date'>
-            2000.08-2006.12
-          </div>
-          <br/>
-          <div class='jobtitle'>
-            technical lead
+          <div class='date-and-title'>
+            <div class='date'>
+              2000.08-2006.12
+            </div>
+            <div class='jobtitle'>
+              technical lead
+            </div>
           </div>
         </div>
 
@@ -498,5 +511,4 @@
 </div>
 </body>
 </html>
-
 
